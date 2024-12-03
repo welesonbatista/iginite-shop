@@ -10,7 +10,7 @@ export const HomeContainer = styled("main", {
 
 export const Product = styled("a", {
   // background: "linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
-  borderRadius: "10px",
+  // borderRadius: "10px",
   cursor: "pointer",
   position: "relative",
   overflow: "hidden",
@@ -20,6 +20,7 @@ export const Product = styled("a", {
   justifyContent: "center",
 
   img: {
+    borderRadius: "10px",
     objectFit: "cover",
     width: "100%",
     height: "100%",
@@ -46,6 +47,7 @@ export const Product = styled("a", {
 
     strong: {
       fontSize: "$lg",
+      color: "$gray100",
     },
 
     span: {

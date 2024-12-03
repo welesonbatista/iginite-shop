@@ -2,15 +2,18 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+
   images: {
-    domains: ['files.stripe.com'], // Domínio da Stripe para carregar imagens
-    localPatterns: [
-      {
-        pathname: '/assets/images/**',
-        search: '',
-      },
+    domains: [
+      'files.stripe.com',
     ],
   },
-};
 
-module.exports = nextConfig;
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
+}
+
+module.exports = nextConfig
