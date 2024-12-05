@@ -5,16 +5,16 @@ const nextConfig = {
 
   images: {
     domains: [
-      'files.stripe.com',
+      'files.stripe.com'
     ],
   },
 
   experimental: {
     newNextLinkBehavior: true,
-    images: {
-      allowFutureImage: true,
-    },
-  },
+    images: { allowFutureImage: true }
+  }
+  
+
 }
 
 module.exports = nextConfig

@@ -43,7 +43,7 @@ export default function Product({ product }: ProductProps) {
     <ProductContainer>
       <ImageContainer>
         <Image
-          src={product?.imageUrl}
+          src={product.imageUrl}
           width={520}
           height={480}
           alt="Imagem do produto"
@@ -51,10 +51,10 @@ export default function Product({ product }: ProductProps) {
       </ImageContainer>
 
       <ProductDetails>
-        <h1>{product?.name}</h1>
-        <span>{product?.price}</span>
+        <h1>{product.name}</h1>
+        <span>{product.price}</span>
 
-        <p>{product?.description}</p>
+        <p>{product.description}</p>
 
         <button disabled={isCreatingCheckoutSession} onClick={handleBuyProduct}>
           Comprar agora
@@ -71,7 +71,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         params: { id: "prod_RJYI0tOSyNBe0i" },
       },
     ],
-    fallback: true,
+    fallback: "blocking",
   };
 };
 
@@ -90,13 +90,13 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
     props: {
       product: {
         id: product.id,
-        name: product?.name,
+        name: product.name,
         imageUrl: product.images[0],
         price: new Intl.NumberFormat("pt-BR", {
           style: "currency",
           currency: "BRL",
         }).format(price.unit_amount / 100),
-        description: product?.description,
+        description: product.description,
         defaultPriceId: price.id,
       },
     },
